@@ -1,0 +1,11 @@
+import gensim.models.keyedvectors as KeyedVectors
+
+#begin=====================read file(combined.tab) from WS-353 =======================================//
+path = '/Users/apple/Downloads/wordsim353/combined.tab'
+embeddings_path = "/Users/apple/Downloads/GoogleNews-vectors-negative300.bin"
+
+word_vector = KeyedVectors.KeyedVectors.load_word2vec_format(embeddings_path,binary=True)
+str = "breakfast cereal dinner lunch"
+str_list = str.split(" ")
+a = word_vector.doesnt_match(str_list)
+print(a)
